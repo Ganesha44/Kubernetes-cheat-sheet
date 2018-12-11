@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+     name: my-replica
+     labels:
+        app: my-app
+        type: back-end
+spec: 
+  template:
+     metadata:
+        name: python-app
+        labels: 
+            app: myapp
+     spec:
+      containers:
+        - name: python-app
+          image: deekshithsn/python-web-app
+  replicas: 3
+  selector: 
+    matchLabels: 
+       app: myapp 
