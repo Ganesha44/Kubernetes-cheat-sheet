@@ -15,8 +15,7 @@ spec:
       - name: ssl-cert-creation
         image: frapsoft/openssl
         command: ["/bin/ash"]
-        args: ["-c","mkdir -p nginx;mkdir -p nginx/ssl;openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /nginx/ssl/ex
-ample.key -out /nginx/ssl/example.crt -subj '/C=IN/ST=KARNATAKA/L=BANAGLORE/O=Global Security/OU=IT Department/CN=example.com'"]
+        args: ["-c","mkdir -p nginx;mkdir -p nginx/ssl;openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /nginx/ssl/example.key -out /nginx/ssl/example.crt -subj '/C=IN/ST=KARNATAKA/L=BANAGLORE/O=Global Security/OU=IT Department/CN=example.com'"]
         volumeMounts:
           - name: ssl-cert
             mountPath: /nginx/ssl
